@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace reservationAPI.Model
 {
-    public partial class ReservationContext : DbContext
+    public class ReservationContext : DbContext
     {
         public ReservationContext()
         {

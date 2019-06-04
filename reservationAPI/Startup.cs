@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 using reservationAPI.Model;
 
 namespace reservationAPI
@@ -19,9 +18,9 @@ namespace reservationAPI
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {  
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-            services.AddDbContext<ReservationContext>();
+        {
+            services.AddMvc();
+            services.AddDbContext<ReservationContext>(options => options.UseSqlServer("server=192.168.0.220;uid=client;pwd=rdociam;database=roomdisplay"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

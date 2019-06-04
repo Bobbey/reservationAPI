@@ -20,7 +20,7 @@ namespace reservationAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<ReservationContext>(options => options.UseSqlServer("server=192.168.0.220;uid=client;pwd=rdociam;database=roomdisplay"));
+            services.AddDbContext<ReservationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionStrinKey")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

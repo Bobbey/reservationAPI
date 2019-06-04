@@ -9,9 +9,9 @@ namespace reservationAPI.Implementation
 {
     public class MariaDBAccess : IDataAccess
     {
-        private readonly RoomdisplayContext _database;
+        private readonly ReservationContext _database;
 
-        public MariaDBAccess(RoomdisplayContext database)
+        public MariaDBAccess(ReservationContext database)
         {
             _database = database;
         }

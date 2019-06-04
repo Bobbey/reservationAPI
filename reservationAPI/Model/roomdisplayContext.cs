@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace reservationAPI.Model
 {
-    public partial class RoomdisplayContext : DbContext
+    public partial class ReservationContext : DbContext
     {
-        public RoomdisplayContext()
+        public ReservationContext()
         {
 
         }
 
-        public RoomdisplayContext(DbContextOptions<RoomdisplayContext> options) : base(options)
+        public ReservationContext(DbContextOptions<ReservationContext> options) : base(options)
         {
 
         }
